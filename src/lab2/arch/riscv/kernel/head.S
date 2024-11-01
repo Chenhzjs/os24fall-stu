@@ -4,6 +4,10 @@
 _start:
     la sp, boot_stack_top
 
+    call mm_init
+    
+    call task_init
+    
     la t0, _traps
     csrw stvec, t0
 
